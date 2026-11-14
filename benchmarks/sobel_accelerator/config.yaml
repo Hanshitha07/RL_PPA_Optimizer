@@ -1,0 +1,22 @@
+project_name: "sobel_edge_accelerator"
+top_module: "top"
+fpga_part: "xc7a35tcpg236-1"
+rtl_files:
+  - "benchmarks/sobel_accelerator/top.v"
+  - "benchmarks/sobel_accelerator/sobel_filter.v"
+  - "benchmarks/sobel_accelerator/image_loader.v"
+
+clock:
+  port_name: "clk"
+  period_options_ns: [6.0, 8.0, 10.0, 12.0, 14.0]
+
+parameters:
+  RAM_STYLE: ["block", "distributed"]
+  GRAD_WIDTH: [9, 10, 11]
+  APPROX_MODE: [0, 1, 2]
+  PIPE_STAGES: [1, 2, 3]
+
+reward_weights:
+  power: 0.40
+  delay: 0.35
+  area: 0.25

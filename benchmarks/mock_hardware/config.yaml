@@ -1,0 +1,15 @@
+project_name: "mock_alu_test"
+top_module: "top"
+fpga_part: "xc7a35tcpg236-1"
+rtl_files: []
+clock:
+  port_name: "clk"
+  period_options_ns: [6.0, 8.0, 10.0, 12.0, 14.0]
+parameters:
+  DATA_WIDTH: [8, 16, 32]
+  PIPE_STAGES: [1, 2, 3]
+  ARCH_MODE: [0, 1, 2]
+reward_weights:
+  power: 0.40
+  delay: 0.35
+  area: 0.25
